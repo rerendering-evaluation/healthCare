@@ -66,7 +66,7 @@ const totalPtBill=()=>{
 
   return (
     <>
-     <div className='border my-7 mx-60 flex justify-center'>
+     <div className='border my-7 mx-60  justify-center hidden lg:block'>
       
         <div> 
         <h1 className='text-center my-8 text-3xl font-bold text-gray-700'>Patient Billing</h1>

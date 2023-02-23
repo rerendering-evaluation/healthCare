@@ -83,14 +83,14 @@ const handledropdown1 = (index1 , index2) => {
           )}
         >
             {/*  */}
-            <div className='w-[100%] h-[80px] z-10  drop-shadow-lg justify-center mx-auto items-center  sm:pr-0 bg-white'>
+            <div className='lg:w-[100%] w-[100%] h-[80px] z-50  drop-shadow-lg justify-center mx-auto items-center  sm:pr-0 bg-white'>
               <div className=' flex justify-between items-center lg:w-[80%] w-[86%] h-full mx-auto z-50'>
                 <div className='flex items-center'>
                   <h1 className='text-3xl font-bold mr-4 sm:text-3xl text-cyan-400 shadow-2xl'>Health Care</h1>
                 </div>
                 {/* nav full contents */}
                 
-                <div className='hidden lg:flex lg:space-x-6 justify-between'>
+                <div className='hidden lg:flex lg:space-x-6 justify-between z-50'>
                     { menuItems.map((item, index)=>{
                         return(
                             <div key={index}>
@@ -105,7 +105,7 @@ const handledropdown1 = (index1 , index2) => {
                                                   <span className="mr-1">{item.head}</span>
                                                   <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
                                                 </button>
-                                                <ul className="dropdown-menu group-hover:block absolute hidden text-gray-700 bg-white pt-1 w-[175%]">
+                                                <ul className="dropdown-menu group-hover:block absolute hidden text-gray-700 bg-white pt-1 w-[175%] z-50">
                                                       {/* iterate submenus*/}
                                                         {item.subMenus && item.subMenus.map((smenu, indexf)=>{
                                                           return(
@@ -233,7 +233,7 @@ const handledropdown1 = (index1 , index2) => {
                                   {
                                     item.expand === true ?(
                                       <div className=''>
-                                        <ul className=' bg-white pl-8 lg:hidden w-[96%]'>
+                                        <ul className=' bg-white pl-8 lg:hidden w-[96%] z-50'>
 
                                         {item.subMenus && item.subMenus.map((smenu,sindex)=>{
                                             return(

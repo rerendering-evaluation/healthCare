@@ -71,10 +71,12 @@ export default function EditModal() {
         open={open}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
+        fullWidth
+  maxWidth="sm"
       >
-        <Box sx={style}>
-          <fieldset className="border-slate-800 ml-10 rounded-lg mt-40  px-8 border-2 bg-white	">
-          <h1 className="mx-20 relative top-8 text-xl text-gray-600">Update Patient Info</h1>
+        <Box sx={style} className="lg:w-[85%] w-[0%] -ml-96 mx-10 lg:mx-0 lg:ml-0">
+          <fieldset className="border-slate-800 lg:ml-10 rounded-lg mt-40  px-8 border-2 bg-white ">
+          <h1 className="lg:mx-20 relative top-8 lg:text-xl ml-20 lg:ml-20 text-gray-600">Update Patient Info</h1>
             <Button
               onClick={handleClose}
               sx={{ marginLeft: 135, color: "error.main" }}
@@ -83,8 +85,8 @@ export default function EditModal() {
             </Button>
             {/* <legend class=" mt-10 text-black text-xl">Add Sub-Group</legend> */}
             <form onSubmit={handleSubmit(onSubmit)}>
-              <Box className="flex gap-10 ml-20 mt-9 space-x-2">
-                <Box>
+              <Box className="lg:flex gap-10 lg:ml-20 ml-12 mt-9 space-x-2 space-y-9 lg:space-y-0">
+                <Box className="ml-2 lg:ml-0">
                   <span>
                     <TextField
                       label="PatientName*"
@@ -97,7 +99,7 @@ export default function EditModal() {
                   </span>
                 </Box>
                 <Box>
-                  <span>
+                  <span className="">
                     <TextField
                       label="Assign Doctor *"
                       defaultValue={editObj.Doctor}
@@ -129,7 +131,7 @@ export default function EditModal() {
                 </Box>
 
                 <Box>
-                  <div className=" mt-20 flex gap-10 mb-5 space-x-2 ml-20">
+                  <div className=" mt-20 flex gap-10 mb-5 space-x-2 lg:ml-20">
                     <span>
                       <Button
                         onClick={handleClose}

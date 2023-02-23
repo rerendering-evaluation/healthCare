@@ -41,7 +41,7 @@ export default function AddModal() {
 
   return (
     <div>
-      <div className=" ml-1 border-black  bg-neutral-300 rounded-lg flex text-cyan-400 justify-end mb-5">
+      <div className=" ml-1 border-black  bg-neutral-300 rounded-lg flex text-cyan-400 justify-end mb-5 z-30 overflow-hidden">
         <Button onClick={handleOpen} variant="contained" >+ New Patient</Button>
       </div>
       <Modal
@@ -51,19 +51,20 @@ export default function AddModal() {
       >
         <Box>
           <div>
-            <fieldset className="border-slate-800 lg:w-96 w-60 lg:ml-36 mt-52 px-4 border-2 rounded-lg bg-white">
-              <div>
-<h1 className="lg:mx-20  relative top-8 text-xl text-gray-600">General Patient Info</h1>
+            <fieldset className="border-slate-800 lg:w-[80%] w-[45%] lg:ml-36 mx-4 lg:mx-0 mt-52 px-4 border-2 rounded-lg bg-white z-30 overflow-hidden">
+              <div className=" mb-6 z-30 overflow-hidden">
+<h1 className="lg:mx-20  relative top-8 text-xl text-gray-600  lg:ml-20">General Patient Info</h1>
               
               <Button
                 onClick={handleClose}
-                sx={{ marginLeft:{sm:100,lg:135}, color: "error.main" }}
+                sx={{ color: "error.main" }}
+                className="relative left-60 lg:left-3/4 flex justify-end"
               >
                 <CloseIcon  className="border-red-700 border rounded m-2 text-xl"/>
               </Button>
               {/* <legend class=" mt-10 text-black text-xl">Add Patient</legend> */}
               </div>
-              <form onSubmit={handleSubmit(onSubmit)}>
+              <form onSubmit={handleSubmit(onSubmit)} className=" lg:ml-0">
                 <Box>
       
                    <div className='mt-3 lg:ml-20  font-semibold text-gray-700 lg:flex lg:gap-20 gap-4 grid grid-cols-1'>
@@ -82,7 +83,7 @@ export default function AddModal() {
 <TextField id="outlined-basic" variant="outlined" label="Doctor Services" size="small" className='lg:w-60 w-64' {...register("DoctServices")}/>
 </div>
                   <Box className=" ">
-                    <div className="lg:ml-10 pb-4 space-x-4 mt-5 mb-5 mr-6 flex lg:justify-end ">
+                    <div className="lg:ml-10 ml-14 pb-4 space-x-4 mt-5 mb-5 mr-6 flex lg:justify-end ">
                       <Button
                      
                         sx={{ border: 1, color: "red", }}

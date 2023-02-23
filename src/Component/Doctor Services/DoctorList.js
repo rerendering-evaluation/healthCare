@@ -17,7 +17,7 @@ function DoctorList() {
   };
   return (
     <>
-      <div className='my-10 w-80 mx-40'>
+      <div className='my-10 w-80 lg:mx-40'>
       {/* <Autocomplete
         multiple
         id="tags-outlined"
@@ -36,11 +36,11 @@ function DoctorList() {
       
 
       <div className='overflow-hidden'>    
-      <Box sx={{ minWidth: 120 }} className='mt-3'>
+      <Box sx={{ minWidth: 120 }} className='mt-3 w-30'>
       <FormControl fullWidth  >
-        <InputLabel id="demo-simple-select-label">Doctor's Name</InputLabel>
+        <InputLabel id="demo-simple-select-label" >Doctor's Name</InputLabel>
         <Select
-        className=''
+        className='w-[70%] lg:w-[100%] '
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={age}
@@ -56,7 +56,7 @@ function DoctorList() {
         </div>
     
       </div>
-      <div className='flex gap-10 overflow-hidden'>
+      <div className='lg:flex gap-10 overflow-hidden'>
         <div>
         {
                 doctName1 ? null : <DoctorName1/>

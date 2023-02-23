@@ -10,7 +10,7 @@ function Main() {
 
       <Container>
         <Grid container direction="row mt-6">
-          <div className=" lg:text-xl text-center">Patient Name</div>
+          <div className=" lg:text-xl text-center flex ">Patient Name</div>
           <div className="mr-10">
             <Search />
           </div>

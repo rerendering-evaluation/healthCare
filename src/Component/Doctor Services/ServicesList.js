@@ -75,7 +75,7 @@ const label =  { inputProps: { 'aria-label': 'Checkbox demo' } }
       }
       <TableCell>
         <div >
-        <Button variant="contained" color="success" className='relative left-36' 
+        <Button variant="contained" color="success" className='relative lg:left-36 left-24' 
         onClick={()=>handleServices(setTest)}
         >Save</Button>
         </div>
@@ -112,7 +112,7 @@ console.log([...test])
 const label =  { inputProps: { 'aria-label': 'Checkbox demo' } }
   return (
     <>
-    <div className='border-2 border-gray-600 rounded '>
+    <div className='border-2 border-gray-600 rounded mt-4 lg:mt-0'>
         <Box className='m-3'>
 <h1 className='text-xl font-semibold text-center text-gray-500 underline'>Radiology</h1>
 <div className='flex gap-8 mt-6 text-gray-500'>
@@ -174,7 +174,7 @@ const label =  { inputProps: { 'aria-label': 'Checkbox demo' } }
       }
       <TableCell>
         <div >
-        <Button variant="contained" color="success" className='relative left-36' 
+        <Button variant="contained" color="success" className='relative lg:left-36 left-24' 
          onClick={()=>handleServices(setTest)}>Save</Button>
         </div>
         
@@ -210,12 +210,12 @@ console.log([...test])
 const label =  { inputProps: { 'aria-label': 'Checkbox demo' } }
   return (
     <>
-    <div className='border-2 border-gray-600 rounded '>
+    <div className='border-2 border-gray-600 rounded mt-4 lg:mt-0'>
         <Box className='m-3'>
-<h1 className='text-xl font-semibold text-center text-gray-500 underline'>Radiology</h1>
+<h1 className='text-xl font-semibold text-center text-gray-500 underline'>Neurology</h1>
 <div className='flex gap-8 mt-6 text-gray-500'>
-  <h1>Doctor Name:<span className='text-gray-700'> Riya Joshi</span></h1>
-  <h1>Service Name:<span className='text-gray-700'> Radiology</span></h1>
+  <h1>Doctor Name:<span className='text-gray-700'> Arihant Kumar</span></h1>
+  <h1>Service Name:<span className='text-gray-700'> Neurology</span></h1>
 </div>
 <div className='mt-3'>
 <form >
@@ -272,7 +272,7 @@ const label =  { inputProps: { 'aria-label': 'Checkbox demo' } }
       }
       <TableCell>
         <div >
-        <Button variant="contained" color="success" className='relative left-36' 
+        <Button variant="contained" color="success" className='relative lg:left-36 left-24' 
          onClick={()=>handleServices(setTest)}>Save</Button>
         </div>
         

@@ -17,7 +17,7 @@ export function PatientDate( ) {
 
   return ( 
     <>
-   <div className='flex mt-3 relative right-10'>
+   <div className='lg:flex mt-3 relative lg:right-10'>
    <div >
    <LocalizationProvider dateAdapter={AdapterDayjs}>
       <DatePicker
@@ -27,7 +27,7 @@ export function PatientDate( ) {
         onChange={(newValue) => {
           setValue(newValue);
         }}
-        renderInput={(params) => <TextField {...params}   size='small' className='w-[64%]'/>}
+        renderInput={(params) => <TextField {...params}   size='small' className='lg:w-[64%]'/>}
       />
     </LocalizationProvider>
    </div>
@@ -40,14 +40,14 @@ export function PatientDate( ) {
         onChange={(newValue1) => {
             setValue1(newValue1);
         }}
-        renderInput={(params) => <TextField {...params}   size='small' className='w-[64%] relative right-14 '/>}
+        renderInput={(params) => <TextField {...params}   size='small' className='w-[64%] relative lg:right-14 '/>}
       />
     </LocalizationProvider>
     
    </div>
    </div>
  <div>
- <TextField id="outlined-basic" label="Total Days" type="number" variant="outlined" size='small' className='w-[50%] relative right-20 top-3' 
+ <TextField id="outlined-basic" label="Total Days" type="number" variant="outlined" size='small' className='w-[50%] relative lg:right-20 top-3' 
         value={diffDays}        />
  </div>
        
