@@ -1,5 +1,6 @@
+import { useRef } from "react";
 import * as React from "react";
-import { Button,Box } from "@mui/material";
+import { Button, Box } from "@mui/material";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -19,63 +20,59 @@ import DialogTitle from "@mui/material/DialogTitle";
 // import DoctorList from "../Doctor Services/DoctorList";
 // import Services from './Services'
 
-
 export function MainTable(props) {
   const [page, setPage] = React.useState(2);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
-  const { data } = useContext(GlobalContext);
-  const { setData } = useContext(GlobalContext);
-  const { EditData } = useContext(GlobalContext);
-  const { services,setServices } = useContext(GlobalContext);
-  const [index1, setIndex1] = React.useState(0);
- 
-
+  const {
+    data
+  } = useContext(GlobalContext);
+  const {
+    setData
+  } = useContext(GlobalContext);
+  const {
+    EditData
+  } = useContext(GlobalContext);
+  const {
+    services,
+    setServices
+  } = useContext(GlobalContext);
+  const index1 = React.useState(0);
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
-
-  const handleChangeRowsPerPage = (event) => {
+  const handleChangeRowsPerPage = event => {
     setRowsPerPage(parseInt(event.target.value, 5));
     setPage(5);
   };
-
   const deleteRow = () => {
-    console.log(index1);
-    var newArr = data.filter((table) => table.id !== index1);
+    console.log(index1.value);
+    var newArr = data.filter(table => table.id !== index1.value);
     setData(newArr);
   };
 
   //  delete row with bug
 
   const [open, setOpen] = React.useState(false);
-
-  const handleClickOpen = (index1) => {
-    setIndex1(index1);
+  const handleClickOpen = index1 => {
+    index1.current = index1.current;
     setOpen(true);
   };
-
   const handleClose = () => {
     setOpen(false);
   };
-
-  return (
-    <div className="grid w-[100%]">
-    <Box >
+  return <div className="grid w-[100%]">
+    <Box>
     <Paper>
       <div>
-        <TableContainer >
-        <TablePagination
-              rowsPerPageOptions={[3, 3, 25]}
-              component="div"
-              count={props.data.result.length}
-              rowsPerPage={rowsPerPage}
-              page={page}
-              onPageChange={handleChangePage}
-              onRowsPerPageChange={handleChangeRowsPerPage}
-            />
-          <Table sx={{  marginTop:2 }}>
+        <TableContainer>
+        <TablePagination rowsPerPageOptions={[3, 3, 25]} component="div" count={props.data.result.length} rowsPerPage={rowsPerPage} page={page} onPageChange={handleChangePage} onRowsPerPageChange={handleChangeRowsPerPage} />
+          <Table sx={{
+              marginTop: 2
+            }}>
             <TableHead>
-            <TableRow sx={{ bgcolor: "text.secondary" }}>
+            <TableRow sx={{
+                  bgcolor: "text.secondary"
+                }}>
                 <TableCell align="center">Sr.No</TableCell>
                 <TableCell align="center"> Patient Name</TableCell>
                 <TableCell align="center">Mobile No</TableCell>
@@ -88,8 +85,7 @@ export function MainTable(props) {
               </TableRow>
             </TableHead>
             <TableBody>
-              {(rowsPerPage > 1 ? data.slice() : data).map((table,index) => (
-                <TableRow key={index}>
+              {(rowsPerPage > 1 ? data.slice() : data).map((table, index) => <TableRow key={index}>
                   <TableCell align="center">{table.IDNo} </TableCell>
                   <TableCell align="center">{table.PatientName}</TableCell>
                   <TableCell align="center">
@@ -107,7 +103,7 @@ export function MainTable(props) {
                         <p>Inactive</p>
                       </span>
                     )}
-                  </TableCell> */}
+                   </TableCell> */}
                   <TableCell align="center">{table.Timing}</TableCell>
                   <TableCell align="center">{table.Doctor}</TableCell>
                   <TableCell align="center">{table.DoctServices}</TableCell>
@@ -117,31 +113,23 @@ export function MainTable(props) {
                       <EditModal />
                     </Button>
                     <Button onClick={() => handleClickOpen(table.id)}>
-                      <MdDelete
-                        className="text-xl text-red-500"
-                      /></Button>
+                      <MdDelete className="text-xl text-red-500" /></Button>
                   </TableCell>
 
                     <div>
-                      <Dialog sx={{}}
-                        open={open}
-                        aria-labelledby="alert-dialog-title"
-                        aria-describedby="alert-dialog-description"
-                      >
+                      <Dialog sx={{}} open={open} aria-labelledby="alert-dialog-title" aria-describedby="alert-dialog-description">
                         <DialogTitle>
                           {"ARE YOU SURE DELETE ROW"}
                         </DialogTitle>
-                        <Button
-                          sx={{ color: "error.main" }}
-                          onClick={() => deleteRow(table.id)}
-                        > 
+                        <Button sx={{
+                        color: "error.main"
+                      }} onClick={() => deleteRow(table.id)}> 
                         <button onClick={handleClose}>DELETE</button>
                         </Button>
                         <Button onClick={handleClose}>CLOSE</Button>
                       </Dialog>
                     </div>
-                </TableRow>
-              ))}
+                </TableRow>)}
             </TableBody>
           </Table>
         </TableContainer>
@@ -149,6 +137,5 @@ export function MainTable(props) {
     </Paper>
     </Box>
 
-  </div>
-  );
+  </div>;
 }

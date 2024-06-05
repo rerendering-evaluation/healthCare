@@ -1,12 +1,11 @@
+import { memo } from "react";
 import React from "react";
 import { Grid } from "@mui/material";
 import Search from "./Select";
 import { Container } from "@mui/system";
 import Add from "./add";
-
-function Main() {
-  return (
-    <div>
+const Main = memo(function Main() {
+  return <div>
 
       <Container>
         <Grid container direction="row mt-6">
@@ -17,8 +16,6 @@ function Main() {
           <Add />
         </Grid>
       </Container>
-    </div>
-  );
-}
-
+    </div>;
+});
 export default Main;
