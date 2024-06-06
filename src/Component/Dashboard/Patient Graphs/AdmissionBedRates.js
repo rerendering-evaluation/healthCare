@@ -4,6 +4,7 @@ import { LineChart, AreaChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Area,
 import { SlGraph } from "react-icons/sl";
 import { BsGraphDown } from "react-icons/bs";
 const AdmissionBedRates = memo(function AdmissionBedRates() {
+  console.log(window.globalCount++);
   const data = [{
     name: 'Jan',
     uv: 4000,

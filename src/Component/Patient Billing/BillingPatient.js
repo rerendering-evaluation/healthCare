@@ -12,6 +12,7 @@ import { ServicesList } from './ServicesCheckbox.js/ServicesList';
 // import NeurologyCheckbox from './ServicesCheckbox.js/NeurologyCheckbox';
 // import DoctorList from '../Doctor Services/DoctorList';
 const BillingPatient = memo(function BillingPatient() {
+  console.log(window.globalCount++);
   const doctNames = [{
     label: 'S.P.Patil',
     value: 'S.P.Patil'

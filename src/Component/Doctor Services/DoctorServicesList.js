@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Button } from '@mui/material';
 import DoctorList from './DoctorList';
 const DoctorServicesList = memo(function DoctorServicesList() {
+  console.log(window.globalCount++);
   const [doctList, setDoctList] = useState(true);
   return <>
      <div className='text-2xl font-bold text-gray-600 text-center mt-5'>

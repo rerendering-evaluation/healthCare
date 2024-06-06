@@ -80,6 +80,7 @@ const Patients = [{
   bmw: "67 kg"
 }];
 export default memo(function GeneralPatientInfo() {
+  console.log(window.globalCount++);
   return <>
     <div className='lg:mx-20 py-10 mx-4 '>
         <div className='bg-white p-5 rounded-xl shadow-lg'>
@@ -103,7 +104,9 @@ export default memo(function GeneralPatientInfo() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {Patients.map((patient, index) => <StyledTableRow key={index}>
+          {Patients.map((patient, index) => {
+                console.log(window.globalCount++);
+                return <StyledTableRow key={index}>
                 <StyledTableCell>{patient.srno}</StyledTableCell>
               <StyledTableCell component="th" scope="row" align="center">
                 {patient.name}
@@ -113,7 +116,8 @@ export default memo(function GeneralPatientInfo() {
               <StyledTableCell align="right">{patient.booldGr}</StyledTableCell>
               <StyledTableCell align="right">{patient.gender}</StyledTableCell>
               <StyledTableCell align="right">{patient.bmw}</StyledTableCell>
-            </StyledTableRow>)}
+            </StyledTableRow>;
+              })}
         </TableBody>
       </Table>
     </TableContainer>

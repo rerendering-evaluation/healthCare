@@ -12,6 +12,7 @@ import { useForm } from 'react-hook-form';
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField } from '@mui/material';
 // import  Watch  from './Watch';
 const AddPatient = memo(function AddPatient() {
+  console.log(window.globalCount++);
   const contextData = useContext(MyContext);
   const {
     addIndePatient,

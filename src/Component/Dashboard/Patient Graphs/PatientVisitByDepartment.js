@@ -26,6 +26,7 @@ const renderCustomizedLabel = ({
   percent,
   index
 }) => {
+  console.log(window.globalCount++);
   const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
   const x = cx + radius * Math.cos(-midAngle * RADIAN);
   const y = cy + radius * Math.sin(-midAngle * RADIAN);
@@ -34,6 +35,7 @@ const renderCustomizedLabel = ({
       </text>;
 };
 const PatientVisitByDepartment = memo(function PatientVisitByDepartment() {
+  console.log(window.globalCount++);
   return <>
       <div className='gap-10 lg:-mt-2 mx-5 lg:mx-0 relative lg:right-3'>
         <div style={{
@@ -55,7 +57,10 @@ const PatientVisitByDepartment = memo(function PatientVisitByDepartment() {
             <div className='relative lg:-top-14 -top-10 right-9 lg:right-0'>
             <PieChart width={400} height={280}>
       <Pie data={data} cx={200} cy={170} labelLine={false} label={renderCustomizedLabel} outerRadius={100} fill="#8884d8" dataKey="value">
-        {data.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)}
+        {data.map((entry, index) => {
+                console.log(window.globalCount++);
+                return <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />;
+              })}
       </Pie>
     </PieChart>
  

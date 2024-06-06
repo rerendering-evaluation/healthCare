@@ -16,8 +16,12 @@ import { PtnServicesContextApi } from '../Patient Services/PtnServicesContextApi
 // import About from '../AboutUs/About/About'
 import NavBar from './NavBar';
 export default memo(function AllFolderRoutes() {
+  console.log(window.globalCount++);
   let location = useLocation();
-  const NotFound = memo(() => <h1>404.. This page is not found! - {location.pathname}</h1>);
+  const NotFound = memo(() => {
+    console.log(window.globalCount++);
+    return <h1>404.. This page is not found! - {location.pathname}</h1>;
+  });
   return <>
     {/* Navbar */}
     <NavBar />

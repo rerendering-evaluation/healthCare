@@ -5,6 +5,7 @@ export const classNames = (...classes) => {
   return classes.filter(Boolean).join(' ');
 };
 const Scroll = memo(() => {
+  console.log(window.globalCount++);
   const [isVisible, setIsVisible] = useState(false);
   const toggleVisibility = () => {
     if (window.pageYOffset > 300) {

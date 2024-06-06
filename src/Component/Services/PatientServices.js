@@ -52,6 +52,7 @@ function stableSort(array, comparator) {
   return stabilizedThis.map(el => el[0]);
 }
 export default function PatientServices(props) {
+  console.log(window.globalCount++);
   const contextData = useContext(MyContext);
   const {
     deleteRow
@@ -143,9 +144,11 @@ export default function PatientServices(props) {
                   <TableRow>
                     {/* heading of table */}
                     
-                    {headers.map((header, index) => <TableCell sortDirection={orderBy === header ? order : false} className="whitespace-nowrap" key={index} index={index}>
+                    {headers.map((header, index) => {
+                    console.log(window.globalCount++);
+                    return <TableCell sortDirection={orderBy === header ? order : false} className="whitespace-nowrap" key={index} index={index}>
                         <TableSortLabel key="tTable" active={false} //arrow for sorting
-                    direction={orderBy === header ? order : "asc"} onClick={createSortHandler(header)}>
+                      direction={orderBy === header ? order : "asc"} onClick={createSortHandler(header)}>
                           <span className="text-gray-600 font-bold">
                             {header}
                           </span>
@@ -153,7 +156,8 @@ export default function PatientServices(props) {
                               {order === "desc" ? "sorted descending" : "sorted ascending"}
                             </Box> : null}
                         </TableSortLabel>
-                      </TableCell>)}
+                      </TableCell>;
+                  })}
 
                   <TableCell>
                       <span className="text-gray-600 font-bold whitespace-nowrap">
@@ -170,15 +174,19 @@ export default function PatientServices(props) {
                   {stableSort(props.data.result, getComparator(order, orderBy)).slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage) //splice use for show rows upto 5 when splice is not
                 // use that time show all rows
                 .map((row, index) => {
+                  console.log(window.globalCount++);
                   return <TableRow key={index.id} className=" ">
-                          {headers && headers.map((header, i) => <TableCell className="whitespace-nowrap" key={i}
-                    // onClick={() => {
-                    //   props.displayView(row, index);
-                    // }}
-                    >
+                          {headers && headers.map((header, i) => {
+                      console.log(window.globalCount++);
+                      return <TableCell className="whitespace-nowrap" key={i}
+                      // onClick={() => {
+                      //   props.displayView(row, index);
+                      // }}
+                      >
                                 {row[header]}
 
-                              </TableCell>)}
+                              </TableCell>;
+                    })}
                     {props.data.actions.length > 0 ? <TableCell className="px-4 py-1 flex whitespace-nowrap leading-normal ">
                               <div className="flex gap-5 items-center">
                                 {/* {displayActions(props.data.actions)} */}

@@ -23,6 +23,7 @@ const headContents = [{
   routerLink: '/PatientBilling'
 }];
 export default memo(function NavBar() {
+  console.log(window.globalCount++);
   return <div>
         <NavScroll headContents={headContents} />
     </div>;

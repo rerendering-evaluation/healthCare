@@ -8,6 +8,7 @@ import { MyContext } from "./ServicesContextApi";
 import { useForm } from "react-hook-form";
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField } from '@mui/material';
 const EditPatientSchedule = memo(function EditPatientSchedule() {
+  console.log(window.globalCount++);
   const contextData = useContext(MyContext);
   const {
     addPatient,

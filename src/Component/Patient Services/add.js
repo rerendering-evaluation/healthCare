@@ -11,6 +11,7 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 const theme = createTheme({});
 export default memo(function AddModal() {
+  console.log(window.globalCount++);
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);

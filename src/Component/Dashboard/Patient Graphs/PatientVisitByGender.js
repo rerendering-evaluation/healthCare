@@ -3,6 +3,7 @@ import React from 'react';
 import { LineChart, AreaChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Area, ResponsiveContainer } from 'recharts';
 import { MdKeyboardArrowDown } from "react-icons/md";
 const PatientVisitByGender = memo(function PatientVisitByGender() {
+  console.log(window.globalCount++);
   const data = [{
     name: 'Jan',
     uv: 4000,

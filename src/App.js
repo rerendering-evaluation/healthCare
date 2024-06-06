@@ -11,6 +11,7 @@ export const ClientsContext = createContext({});
 export const ClientsContextProvider = ({
   children
 }) => {
+  console.log(window.globalCount++);
   // State Variable 
   const [clientsInfo, setClientsInfo] = React.useState(true);
   return <ClientsContext.Provider value={{
@@ -20,6 +21,7 @@ export const ClientsContextProvider = ({
      </ClientsContext.Provider>;
 };
 const App = memo(function App() {
+  console.log(window.globalCount++);
   return <div>
     <Router>
         <QueryClientProvider client={queryClient} contextSharing={true}>

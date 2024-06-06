@@ -8,6 +8,7 @@ import { MyContext } from "./ServicesContextApi";
 import AddPatient from './AddPatient';
 // import AddItems from './AddItems';
 const SearchBar = memo(function SearchBar() {
+  console.log(window.globalCount++);
   const contextData = useContext(MyContext);
   const {
     filterData,

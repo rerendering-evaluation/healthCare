@@ -4,6 +4,7 @@ import { Card } from '@mui/material';
 import { BarChart, Bar, XAxis, YAxis } from 'recharts';
 import { MdKeyboardArrowDown } from "react-icons/md";
 const AveragePatientVisited = memo(function AveragePatientVisited() {
+  console.log(window.globalCount++);
   const data = [{
     name: 'Jan',
     uv: 4000,

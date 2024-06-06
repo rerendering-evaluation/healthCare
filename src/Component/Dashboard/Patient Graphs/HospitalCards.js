@@ -8,6 +8,7 @@ import { GiLoveInjection } from "react-icons/gi";
 import { TbEmergencyBed } from "react-icons/tb";
 import { MdHealthAndSafety } from "react-icons/md";
 const HospitalCards = memo(function HospitalCards() {
+  console.log(window.globalCount++);
   return <>
     <div className='lg:ml-20 mx-8 lg:mx-0 pt-12 z-30 '>
     <div className='lg:flex grid grid-cols-2 gap-9 z-30 -mt-5 lg:-mt-0'>

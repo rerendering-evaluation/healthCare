@@ -6,6 +6,7 @@ import { AiOutlineClockCircle } from "react-icons/ai";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { FormControl, FormHelperText, TextField, Checkbox, FormControlLabel, Grid } from '@mui/material';
 export const PatientTime = memo(function PatientTime() {
+  console.log(window.globalCount++);
   // const [dateValue1, setDateValue1] = React.useState(new Date());
   // const [dateValue2, setDateValue2] = React.useState(new Date());
   const dateValue1 = React.useState(null);
@@ -51,11 +52,14 @@ export const PatientTime = memo(function PatientTime() {
             // maxDate={dateValue2}
             open={open} onOpen={() => setOpen(true)} onClose={() => setOpen(false)} minTime={dateValue1.value} label="Admission Time" value={dateValue1.value} inputProps={{
               readOnly: true
-            }} ref={dummy} renderInput={props => <TextField {...props} onClick={e => setOpen(true)} size="small" sx={{
-              svg: {
-                color: "#0B83A5"
-              }
-            }} />} name="startTime" defaultValue=""
+            }} ref={dummy} renderInput={props => {
+              console.log(window.globalCount++);
+              return <TextField {...props} onClick={e => setOpen(true)} size="small" sx={{
+                svg: {
+                  color: "#0B83A5"
+                }
+              }} />;
+            }} name="startTime" defaultValue=""
             // inputFormat="dd/MM/yyyy"
             />
                         </LocalizationProvider>
@@ -73,11 +77,14 @@ export const PatientTime = memo(function PatientTime() {
                         <LocalizationProvider dateAdapter={AdapterDateFns}>
                             <TimePicker open={open1} onOpen={() => setOpen1(true)} onClose={() => setOpen1(false)} minTime={dateValue1.value} label="Discharge Time" value={dateValue2.value} inputProps={{
               readOnly: true
-            }} ref={dummy} renderInput={props => <TextField {...props} onClick={e => setOpen1(true)} size="small" sx={{
-              svg: {
-                color: "#0B83A5"
-              }
-            }} />} name="endTime" defaultValue="" />
+            }} ref={dummy} renderInput={props => {
+              console.log(window.globalCount++);
+              return <TextField {...props} onClick={e => setOpen1(true)} size="small" sx={{
+                svg: {
+                  color: "#0B83A5"
+                }
+              }} />;
+            }} name="endTime" defaultValue="" />
                         </LocalizationProvider>
 
                         <FormHelperText style={{

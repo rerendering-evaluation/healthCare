@@ -21,8 +21,12 @@ import EMRComponents from './EMR/EMRComponents';
 import EMR from './EMR/EMR';
 import EMRpage from './EMR/EMRpage';
 export default memo(function CallAll() {
+  console.log(window.globalCount++);
   let location = useLocation();
-  const NotFound = memo(() => <h1>404.. This page is not found! - {location.pathname}</h1>);
+  const NotFound = memo(() => {
+    console.log(window.globalCount++);
+    return <h1>404.. This page is not found! - {location.pathname}</h1>;
+  });
   return <div className="overflow-hidden font-Poppins">
     {/* <Router> */}
       <ul className="border-4 py-4 border-black flex space-x-4">

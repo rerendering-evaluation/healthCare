@@ -7,6 +7,7 @@ import PatientVisitByGender from './Patient Graphs/PatientVisitByGender';
 import AdmissionBedRates from './Patient Graphs/AdmissionBedRates';
 import GeneralPatientInfo from './Patient Graphs/GeneralPatientInfo';
 const Home = memo(function Home() {
+  console.log(window.globalCount++);
   return <>
     <div className='bg-gray-200'>
     <div className='z-30'>

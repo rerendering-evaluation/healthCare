@@ -6,6 +6,7 @@ import { Checkbox, FormControlLabel } from "@mui/material";
 // import FormControlLabel from "@material-ui/core/FormControlLabel";
 
 export default memo(function RadiologyCheckbox() {
+  console.log(window.globalCount++);
   const yupSchema = yup.object().shape({
     multiCheckbox: yup.object().shape({
       option1: yup.boolean(),
@@ -49,13 +50,22 @@ export default memo(function RadiologyCheckbox() {
           <h3>Radiology</h3>
           <FormControlLabel control={<Controller name="multiCheckbox.option1" control={control} render={({
           field
-        }) => <Checkbox {...field} />} />} label="X-ray" />
+        }) => {
+          console.log(window.globalCount++);
+          return <Checkbox {...field} />;
+        }} />} label="X-ray" />
           <FormControlLabel control={<Controller name="multiCheckbox.option2" control={control} render={({
           field
-        }) => <Checkbox {...field} />} />} label="Ultra-Sound" />
+        }) => {
+          console.log(window.globalCount++);
+          return <Checkbox {...field} />;
+        }} />} label="Ultra-Sound" />
           <FormControlLabel control={<Controller name="multiCheckbox.option3" control={control} render={({
           field
-        }) => <Checkbox {...field} />} />} label="MRI" />
+        }) => {
+          console.log(window.globalCount++);
+          return <Checkbox {...field} />;
+        }} />} label="MRI" />
           {errors?.multiCheckbox && <p style={{
           color: "green"
         }}>{`Error: ${errors?.multiCheckbox?.message}`}</p>}

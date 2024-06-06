@@ -24,6 +24,7 @@ const style = {
 };
 const theme = createTheme({});
 export default memo(function EditModal() {
+  console.log(window.globalCount++);
   const [open, setOpen] = React.useState(false);
   // modal open
   const handleOpen = () => setOpen(true);

@@ -7,6 +7,7 @@ import { GlobalContext } from "./PtnServicesContextApi";
 import SearchIcon from "@mui/icons-material/Search";
 import { useEffect } from "react";
 export default memo(function Search() {
+  console.log(window.globalCount++);
   const {
     Data
   } = useContext(GlobalContext);

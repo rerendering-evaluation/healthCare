@@ -5,6 +5,7 @@ import Search from "./Select";
 import { Container } from "@mui/system";
 import Add from "./add";
 const Main = memo(function Main() {
+  console.log(window.globalCount++);
   return <div>
 
       <Container>

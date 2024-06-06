@@ -5,6 +5,7 @@ import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 import AveragePatientVisited from './AveragePatientVisited';
 import PatientVisitByDepartment from './PatientVisitByDepartment';
 const PatientVisit = memo(function PatientVisit() {
+  console.log(window.globalCount++);
   const data = [{
     name: '',
     uv: 4000,

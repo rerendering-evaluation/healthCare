@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form';
 
 // Pathology
 export const DoctorName1 = memo(function DoctorName1() {
+  console.log(window.globalCount++);
   const Services = [{
     id: 1,
     Lable: 'Urine Test',
@@ -48,7 +49,9 @@ export const DoctorName1 = memo(function DoctorName1() {
                       <TableCell align='center'>Charges</TableCell>
                   </TableRow>
               </TableHead>
-              {Services.map((Service, index) => <>
+              {Services.map((Service, index) => {
+                    console.log(window.globalCount++);
+                    return <>
           <TableBody>
           <TableRow key={index}>
           <TableCell align='center'>
@@ -59,10 +62,11 @@ export const DoctorName1 = memo(function DoctorName1() {
               <TableCell align='center'>{Service.Charges}</TableCell> 
           </TableRow>
           </TableBody>
-          </>)}
+          </>;
+                  })}
       <TableCell>
         <div>
-        <Button variant="contained" color="success" className='relative lg:left-36 left-24' onClick={() => handleServices((v) => test.current = v)}>Save</Button>
+        <Button variant="contained" color="success" className='relative lg:left-36 left-24' onClick={() => handleServices(v => test.current = v)}>Save</Button>
         </div>
         
       </TableCell>
@@ -81,6 +85,7 @@ export const DoctorName1 = memo(function DoctorName1() {
 
 // Radiology
 export const DoctorName2 = memo(function DoctorName2() {
+  console.log(window.globalCount++);
   const Services = [{
     id: 1,
     Lable: 'X-ray',
@@ -123,7 +128,9 @@ export const DoctorName2 = memo(function DoctorName2() {
                       <TableCell align='center'>Charges</TableCell>
                   </TableRow>
               </TableHead>
-              {Services.map((Service, index) => <>
+              {Services.map((Service, index) => {
+                    console.log(window.globalCount++);
+                    return <>
           <TableBody>
           <TableRow key={index}>
           <TableCell align='center'>
@@ -141,10 +148,11 @@ export const DoctorName2 = memo(function DoctorName2() {
             
           </TableRow>
           </TableBody>
-          </>)}
+          </>;
+                  })}
       <TableCell>
         <div>
-        <Button variant="contained" color="success" className='relative lg:left-36 left-24' onClick={() => handleServices((v) => test.current = v)}>Save</Button>
+        <Button variant="contained" color="success" className='relative lg:left-36 left-24' onClick={() => handleServices(v => test.current = v)}>Save</Button>
         </div>
         
       </TableCell>
@@ -163,6 +171,7 @@ export const DoctorName2 = memo(function DoctorName2() {
 
 // Neurology
 export const DoctorName3 = memo(function DoctorName3() {
+  console.log(window.globalCount++);
   const Services = [{
     id: 1,
     Lable: 'CT Scan',
@@ -205,7 +214,9 @@ export const DoctorName3 = memo(function DoctorName3() {
                       <TableCell align='center'>Charges</TableCell>
                   </TableRow>
               </TableHead>
-              {Services.map((Service, index) => <>
+              {Services.map((Service, index) => {
+                    console.log(window.globalCount++);
+                    return <>
           <TableBody>
           <TableRow key={index}>
           <TableCell align='center'>
@@ -223,10 +234,11 @@ export const DoctorName3 = memo(function DoctorName3() {
             
           </TableRow>
           </TableBody>
-          </>)}
+          </>;
+                  })}
       <TableCell>
         <div>
-        <Button variant="contained" color="success" className='relative lg:left-36 left-24' onClick={() => handleServices((v) => test.current = v)}>Save</Button>
+        <Button variant="contained" color="success" className='relative lg:left-36 left-24' onClick={() => handleServices(v => test.current = v)}>Save</Button>
         </div>
         
       </TableCell>

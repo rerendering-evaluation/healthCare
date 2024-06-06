@@ -6,6 +6,7 @@ import { DoctorsList } from './Data';
 // import { DoctServiceDetails } from './DoctServiceDetails';
 import { DoctorName1, DoctorName2, DoctorName3 } from './ServicesList';
 const DoctorList = memo(function DoctorList() {
+  console.log(window.globalCount++);
   // const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
   const [age, setAge] = React.useState('');
   const [doctName1, setDoctName1] = useState(true);

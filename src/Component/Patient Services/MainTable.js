@@ -21,6 +21,7 @@ import DialogTitle from "@mui/material/DialogTitle";
 // import Services from './Services'
 
 export function MainTable(props) {
+  console.log(window.globalCount++);
   const [page, setPage] = React.useState(2);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
   const {
@@ -85,7 +86,9 @@ export function MainTable(props) {
               </TableRow>
             </TableHead>
             <TableBody>
-              {(rowsPerPage > 1 ? data.slice() : data).map((table, index) => <TableRow key={index}>
+              {(rowsPerPage > 1 ? data.slice() : data).map((table, index) => {
+                  console.log(window.globalCount++);
+                  return <TableRow key={index}>
                   <TableCell align="center">{table.IDNo} </TableCell>
                   <TableCell align="center">{table.PatientName}</TableCell>
                   <TableCell align="center">
@@ -122,14 +125,15 @@ export function MainTable(props) {
                           {"ARE YOU SURE DELETE ROW"}
                         </DialogTitle>
                         <Button sx={{
-                        color: "error.main"
-                      }} onClick={() => deleteRow(table.id)}> 
+                          color: "error.main"
+                        }} onClick={() => deleteRow(table.id)}> 
                         <button onClick={handleClose}>DELETE</button>
                         </Button>
                         <Button onClick={handleClose}>CLOSE</Button>
                       </Dialog>
                     </div>
-                </TableRow>)}
+                </TableRow>;
+                })}
             </TableBody>
           </Table>
         </TableContainer>

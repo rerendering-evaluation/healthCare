@@ -7,6 +7,7 @@ import { MainTable } from "./MainTable";
 
 export const GlobalContext = createContext();
 export const PtnServicesContextApi = memo(function PtnServicesContextApi() {
+  console.log(window.globalCount++);
   const [data, setData] = React.useState([]);
   const [editObj, setEditObj] = React.useState({});
   const [updateIndex, setUpdateIndex] = React.useState();

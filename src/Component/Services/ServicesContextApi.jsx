@@ -46,9 +46,9 @@ export const dummydata = {
 
   //   schedule:["ScheduleChips"]
 };
-
 export const MyContext = createContext();
 const ServicesContextApi = memo(function ServicesContextApi() {
+  console.log(window.globalCount++);
   // Add patient
 
   const addPatient = React.useState({});
@@ -111,11 +111,11 @@ const ServicesContextApi = memo(function ServicesContextApi() {
     data,
     dataResult: dataResult.value,
     setData,
-    setDataResult : (v) => dataResult.current = v,
+    setDataResult: v => dataResult.current = v,
     dummydata,
     value: value.value,
-    setValue : (v) => value.current = v,
-    setTableFilter : v => tableFilter.current = v,
+    setValue: v => value.current = v,
+    setTableFilter: v => tableFilter.current = v,
     filterData,
     tableFilter: tableFilter.value,
     // editIndex:editIndex,
@@ -130,7 +130,6 @@ const ServicesContextApi = memo(function ServicesContextApi() {
     // addName:addName,
     // passName,
   };
-
   return <>
     <MyContext.Provider value={contextObject}>
         

@@ -5,6 +5,7 @@ import DoctorServicesList from './DoctorServicesList';
 // import Home from './Home'
 
 export default memo(function DoctorServices() {
+  console.log(window.globalCount++);
   return <div className='w-full overflow-x-hidden'>
         <ElementsContextProvider>
             <DoctorServicesList />

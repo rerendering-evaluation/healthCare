@@ -5,6 +5,7 @@ export const ElementsContext = createContext({});
 export const ElementsContextProvider = ({
   children
 }) => {
+  console.log(window.globalCount++);
   // State Variable 
   const data = React.useState();
   return <ElementsContext.Provider value={{}}> 

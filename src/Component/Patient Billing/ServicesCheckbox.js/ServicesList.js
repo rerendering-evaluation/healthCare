@@ -9,6 +9,7 @@ import RadiologyCheckbox from './RadiologyCheckbox';
 // import { DoctServiceDetails } from './DoctServiceDetails';
 
 export const ServicesList = memo(function ServicesList() {
+  console.log(window.globalCount++);
   // const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
   const [age, setAge] = React.useState('');
   const [doctName1, setDoctName1] = useState(true);
