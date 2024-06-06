@@ -77,7 +77,7 @@ const BillingPatient = memo(function BillingPatient() {
 
   const totalPtBill = () => {
     bill.current = {
-      bill.current: parseInt(total) + parseInt(totalDoctCharge) + parseInt(totalserviceCharge)
+      bill: parseInt(total) + parseInt(totalDoctCharge) + parseInt(totalserviceCharge)
     };
     console.log(bill.value);
     totalBill.current = totalBill.current.value;
@@ -127,9 +127,9 @@ const BillingPatient = memo(function BillingPatient() {
                         IndicatorSeparator: () => null
                       }} isMulti name="colors" placeholder="Assign Wards" options={wardNames} className="basic-multi-select" classNamePrefix="select" />
   </div>
-  <TextField id="outlined-basic" label="Charges/Ward" size='small' type="number" variant="outlined" className='w-32' value={number1.value} ref={dummy} autoComplete="off" />
+  <TextField id="outlined-basic" label="Charges/Ward" size='small' type="number" variant="outlined" className='w-32' value={number1.value} ref={number1} autoComplete="off" />
   <p className='text-xl font-semibold px-3 text-gray-500'>+</p>
-  <TextField id="outlined-basic" label="Total Days" size='small' type="number" variant="outlined" className='w-32' value={number2.value} ref={dummy} autoComplete="off" />
+  <TextField id="outlined-basic" label="Total Days" size='small' type="number" variant="outlined" className='w-32' value={number2.value} ref={number2} autoComplete="off" />
   <p className='text-xl font-semibold px-3 text-gray-500'>=</p>
   <TextField id="outlined-basic" label="Total Charges" size='small' type="number" variant="outlined" className='w-32' autoComplete="off" value={total} />
                   </div>
@@ -150,9 +150,9 @@ const BillingPatient = memo(function BillingPatient() {
                         IndicatorSeparator: () => null
                       }} isMulti name="colors" placeholder="Assign Doctor" options={doctNames} className="basic-multi-select" classNamePrefix="select" />
   </div>
-  <TextField id="outlined-basic" label=" Doctor Charge" size='small' type="number" variant="outlined" className='w-32' value={doctCharge1.value} autoComplete="off" ref={dummy} />
+  <TextField id="outlined-basic" label=" Doctor Charge" size='small' type="number" variant="outlined" className='w-32' value={doctCharge1.value} autoComplete="off" ref={doctCharge1} />
   <p className='text-xl font-semibold px-3 text-gray-500'>+</p>
-  <TextField id="outlined-basic" label="Charges/Day " size='small' type="number" variant="outlined" className='w-32' value={doctCharge2.value} autoComplete="off" ref={dummy} />
+  <TextField id="outlined-basic" label="Charges/Day " size='small' type="number" variant="outlined" className='w-32' value={doctCharge2.value} autoComplete="off" ref={doctCharge2} />
   <p className='text-xl font-semibold px-3 text-gray-500'>=</p>
   <TextField id="outlined-basic" label="Total Charges" size='small' type="number" variant="outlined" className='w-32' value={totalDoctCharge} autoComplete="off" />
                   </div>
@@ -174,9 +174,9 @@ const BillingPatient = memo(function BillingPatient() {
                         IndicatorSeparator: () => null
                       }} isMulti name="colors" placeholder="Assign Services" options={servicesNames} className="basic-multi-select" classNamePrefix="select" />
   </div>
-  <TextField id="outlined-basic" label="Charges/Services" size='small' type="number" variant="outlined" className='w-32' value={serviceCharge1.value} autoComplete="off" ref={dummy} />
+  <TextField id="outlined-basic" label="Charges/Services" size='small' type="number" variant="outlined" className='w-32' value={serviceCharge1.value} autoComplete="off" ref={serviceCharge1} />
   <p className='text-xl font-semibold px-3 text-gray-500'>+</p>
-  <TextField id="outlined-basic" label="Total Services" size='small' type="number" variant="outlined" className='w-32' value={serviceCharge2.value} autoComplete="off" ref={dummy} />
+  <TextField id="outlined-basic" label="Total Services" size='small' type="number" variant="outlined" className='w-32' value={serviceCharge2.value} autoComplete="off" ref={serviceCharge2} />
   <p className='text-xl font-semibold px-3 text-gray-500'>=</p>
   <TextField id="outlined-basic" label="Total Charges" size='small' type="number" variant="outlined" className='w-32' value={totalserviceCharge} autoComplete="off" />
                   </div>

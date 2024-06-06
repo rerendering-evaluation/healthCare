@@ -5,10 +5,10 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { TextField } from '@mui/material';
 export const PatientDate = memo(function PatientDate() {
-  const value = React.useState(null);
-  const value1 = React.useState(null);
-  const date1 = new Date(value.value);
-  const date2 = new Date(value1.value);
+  const value = React.useRef(null);
+  const value1 = React.useRef(null);
+  const date1 = new Date(value.current.value);
+  const date2 = new Date(value1.current.value);
   const diffTime = Math.abs(date2 - date1);
   const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
   // console.log(diffTime + " milliseconds");
@@ -18,12 +18,12 @@ export const PatientDate = memo(function PatientDate() {
    <div className='lg:flex mt-3 relative lg:right-10'>
    <div>
    <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <DatePicker label="Admit Date" value={value.value} ref={dummy} renderInput={params => <TextField {...params} size='small' className='lg:w-[64%]' />} />
+      <DatePicker label="Admit Date" value={value.current.value} ref={value} renderInput={params => <TextField {...params} size='small' className='lg:w-[64%]' />} />
     </LocalizationProvider>
    </div>
    <div>
    <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <DatePicker label="Discharge Date" value={value1.value} ref={dummy} renderInput={params => <TextField {...params} size='small' className='w-[64%] relative lg:right-14 ' />} />
+      <DatePicker label="Discharge Date" value={value1.current.value} ref={value} renderInput={params => <TextField {...params} size='small' className='w-[64%] relative lg:right-14 ' />} />
     </LocalizationProvider>
     
    </div>

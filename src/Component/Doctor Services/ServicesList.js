@@ -53,7 +53,7 @@ export const DoctorName1 = memo(function DoctorName1() {
           <TableRow key={index}>
           <TableCell align='center'>
               {/* <CheckBox/> */}
-              <Checkbox ref={dummy} value={test.value} />
+              <Checkbox ref={test} value={test.value} />
               </TableCell>
               <TableCell align='center'>{Service.Lable}</TableCell>
               <TableCell align='center'>{Service.Charges}</TableCell> 
@@ -62,7 +62,7 @@ export const DoctorName1 = memo(function DoctorName1() {
           </>)}
       <TableCell>
         <div>
-        <Button variant="contained" color="success" className='relative lg:left-36 left-24' onClick={() => handleServices(setTest)}>Save</Button>
+        <Button variant="contained" color="success" className='relative lg:left-36 left-24' onClick={() => handleServices((v) => test.current = v)}>Save</Button>
         </div>
         
       </TableCell>
@@ -128,7 +128,7 @@ export const DoctorName2 = memo(function DoctorName2() {
           <TableRow key={index}>
           <TableCell align='center'>
               {/* <CheckBox/> */}
-              <Checkbox ref={dummy} value={test.value} />
+              <Checkbox ref={test} value={test.value} />
               </TableCell>
               <TableCell align='center'>
                           {Service.Lable}
@@ -144,7 +144,7 @@ export const DoctorName2 = memo(function DoctorName2() {
           </>)}
       <TableCell>
         <div>
-        <Button variant="contained" color="success" className='relative lg:left-36 left-24' onClick={() => handleServices(setTest)}>Save</Button>
+        <Button variant="contained" color="success" className='relative lg:left-36 left-24' onClick={() => handleServices((v) => test.current = v)}>Save</Button>
         </div>
         
       </TableCell>
@@ -210,7 +210,7 @@ export const DoctorName3 = memo(function DoctorName3() {
           <TableRow key={index}>
           <TableCell align='center'>
               {/* <CheckBox/> */}
-              <Checkbox ref={dummy} value={test.value} />
+              <Checkbox ref={test} value={test.value} />
               </TableCell>
               <TableCell align='center'>
                           {Service.Lable}
@@ -226,7 +226,7 @@ export const DoctorName3 = memo(function DoctorName3() {
           </>)}
       <TableCell>
         <div>
-        <Button variant="contained" color="success" className='relative lg:left-36 left-24' onClick={() => handleServices(setTest)}>Save</Button>
+        <Button variant="contained" color="success" className='relative lg:left-36 left-24' onClick={() => handleServices((v) => test.current = v)}>Save</Button>
         </div>
         
       </TableCell>
